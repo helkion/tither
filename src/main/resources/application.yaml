@@ -1,4 +1,9 @@
-
+server:
+  error:
+    whitelabel:
+      enabled: true
+  port: 3030
+  
 info:
   app:
     version: "@project.version@"
@@ -8,8 +13,17 @@ logging:
   web: DEBUG
   org.springframework: INFO
   org.springframework.security: DEBUG
+  nz.hmp.tither: INFO
+#  file: 
+#   max-history: 6
+#   max-size: 20MB    
+ pattern:
+  console: "%date %-5.5level %4.4thread [%25.25file:%3.3line] %X{breadCrumbId} - %msg%n"
+  file: "${spring.application.name} %date %-5.5level %4.4thread [%25.25file:%3.3line] %X{breadCrumbId} - %msg%n"
   
 spring:
+ application:
+    name: tither
  security:
 #  user:
 #   password: senha   
@@ -24,3 +38,5 @@ spring:
     username: sa
     password: senha   
    
+logging.file: /opt/log/tither-service.log
+

@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
  * 
  */
 @RestController
-public class InfoController {
+public class InfoController extends BaseController{
 
+	private static final long serialVersionUID = -8146470575215117098L;
+	
 	@Value("${info.app.version}")
 	private String appVersion;
 

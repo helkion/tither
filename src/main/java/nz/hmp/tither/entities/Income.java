@@ -14,7 +14,7 @@ import lombok.Setter;
 /**
  * 
  */
-@Entity
+@Entity(name = "\"income\"")
 public class Income {
 
 	@Id
