@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import nz.hmp.tither.entities.Income;
@@ -43,7 +43,7 @@ public class IncomeController extends BaseController{
 
     @PostMapping("/income")
     public ResponseEntity<Income> saveIncome(
-    		@ModelAttribute Income income) {
+    		@RequestBody Income income) {
     	logger.info("saveIncome");
     	HttpStatus status = HttpStatus.CREATED;
 //    	boolean success = false;
