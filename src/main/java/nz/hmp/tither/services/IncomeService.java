@@ -6,6 +6,8 @@ package nz.hmp.tither.services;
 import java.util.List;
 import java.util.stream.Stream;
 
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,8 @@ public class IncomeService extends BaseService{
 	@Autowired
     private IncomeRepository incomeRepository;
 
-    public Income saveIncome(Income income) {
+    public Income saveIncome(Income income) 
+    		throws ConstraintViolationException{
         income = incomeRepository.save(income);
         return income;
     }
